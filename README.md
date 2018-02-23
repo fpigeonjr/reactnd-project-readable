@@ -9,14 +9,36 @@ This repository includes the code for the backend API Server that you'll use to 
 To get started developing right away:
 
 * Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
+  * `cd api-server`
+  * `npm install`
+  * `node server`
 * In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
-    - `cd frontend`
-    - `npm start`
+  * `create-react-app frontend`
+  * `cd frontend`
+  * `npm start` or `yarn start`
 
 ## API Server
 
 Information about the API server and how to use it can be found in its [README file](api-server/README.md).
+
+## Frontend
+
+This is the plan to build out the project which has four views.
+
+* Default / Home View
+
+  * lists all categories
+  * list all posts with ability to sort on voteScore and timestamp
+  * add new post
+
+* Category View
+
+  * same as Default but filtered to only posts from category
+
+* Post Detail View
+
+  * show all details of the post
+  * show all comments of the post
+
+* Create/Edit View
+  * form to create/edit post
