@@ -1,4 +1,5 @@
-import { createStore, compose } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 import { syncHistoryWithStore } from "react-router-redux";
 import { browserHistory } from "react-router";
 
@@ -6,9 +7,12 @@ import { browserHistory } from "react-router";
 import rootReducer from "./reducers/index";
 
 // get data from API
-// import comments
 // import posts
+import posts from "./data/posts";
+// import comments
+import comments from "./data/comments";
 // import categories
+import categories from "./data/categories";
 
 // create an object for the dfault data
 const defaultState = {
@@ -18,6 +22,6 @@ const defaultState = {
 };
 
 const store = createStore(rootReducer, defaultState);
-
 export const history = syncHistoryWithStore(browserHistory, store);
+
 export default store;
