@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
 import "./styles/index.css";
 import registerServiceWorker from "./registerServiceWorker";
 // import components
-import Main from "./component/Main";
+import App from "./component/App";
 import Single from "./component/Single";
 import PostList from "./component/PostList";
 // import react-router deps
@@ -14,7 +15,7 @@ import store, { history } from "./store";
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Main}>
+      <Route path="/" component={App}>
         <IndexRoute component={PostList} />
         <Route path="/view/:postId" component={Single} />
       </Route>
