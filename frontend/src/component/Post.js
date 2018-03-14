@@ -53,10 +53,10 @@ class Post extends Component {
                     <FaThumbsDown key={post.voteScore} />
                   </CSSTransition> */}
                   <div className="control-buttons">
-                    <button>
+                    <button onClick={this.props.increment.bind(null, i)}>
                       <FaThumbsUp />
                     </button>
-                    <button>
+                    <button onClick={this.props.decrement.bind(null, i)}>
                       <FaThumbsDown />
                     </button>
                   </div>

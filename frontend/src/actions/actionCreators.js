@@ -9,7 +9,7 @@ export function increment(id) {
 // decrement voteScore
 export function decrement(id) {
   return {
-    type: "INCREMENT_VOTESCORE",
+    type: "DECREMENT_VOTESCORE",
     id
   };
 }

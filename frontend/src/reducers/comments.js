@@ -5,7 +5,6 @@
 // 4. React handles updates to UI
 
 function comments(state = [], action) {
-  console.log(state, action);
   return state;
 }
 

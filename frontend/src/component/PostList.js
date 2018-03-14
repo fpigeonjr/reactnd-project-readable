@@ -15,7 +15,7 @@ class PostList extends Component {
                 {...this.props}
                 key={i}
                 i={i}
-                post={this.props.posts[post][0]}
+                post={this.props.posts[post]}
               />
             ))}
           </Col>

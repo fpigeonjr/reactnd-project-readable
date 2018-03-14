@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 // import thunk from "redux-thunk";
 import { syncHistoryWithStore } from "react-router-redux";
 import { browserHistory } from "react-router";
-
+// import { normalize, schema } from "normalizr";
 // import the root reducer
 import rootReducer from "./reducers/index";
 
@@ -55,6 +55,23 @@ const defaultState = {
   comments,
   categories
 };
+
+//normalize data
+// Define a posts schema
+// const author = new schema.Entity("authors");
+
+// // Define your comments schema
+// const comment = new schema.Entity("comments", {
+//   commenter: author
+// });
+
+// // Define your post
+// const post = new schema.Entity("posts", {
+//   author: author,
+//   comments: [comment]
+// });
+// const normalizedData = normalize(defaultState, post);
+// console.log(normalizedData);
 
 const store = createStore(rootReducer, defaultState);
 export const history = syncHistoryWithStore(browserHistory, store);
