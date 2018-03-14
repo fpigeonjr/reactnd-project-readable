@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Post from "./Post";
+import CategoryList from "./CategoryList";
 import { Row, Col } from "reactstrap";
 
 class PostList extends Component {
@@ -17,6 +18,9 @@ class PostList extends Component {
                 post={this.props.posts[post][0]}
               />
             ))}
+          </Col>
+          <Col sm={{ size: 3, offset: 1 }}>
+            <CategoryList {...this.props} />
           </Col>
         </Row>
       </div>

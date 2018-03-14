@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-// import { Button, Badge } from "reactstrap";
-import { FaEdit, FaTrash } from "react-icons/lib/fa/";
+import { FaEdit, FaTrash, FaThumbsUp, FaThumbsDown } from "react-icons/lib/fa/";
 import { Row, Col } from "reactstrap";
 import {
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -13,6 +11,12 @@ import {
   Button,
   Badge
 } from "reactstrap";
+// import CSSTransition from "react-transition-group";
+import styled from "styled-components";
+
+const PostScore = styled.p`
+  margin-bottom: 0;
+`;
 
 class Post extends Component {
   render() {
@@ -26,23 +30,44 @@ class Post extends Component {
                 <Col sm="8">
                   <CardTitle>{post.title}</CardTitle>
                   <CardSubtitle>by {post.author}</CardSubtitle>
-                  <FaEdit /> Edit
-                  <FaTrash /> Delete
+                  <Button outline color="secondary">
+                    <FaEdit /> Edit
+                  </Button>{" "}
+                  <Button outline color="danger">
+                    <FaTrash /> Delete
+                  </Button>
                 </Col>
                 <Col sm="4">
                   <Badge>{post.category}</Badge>
-                  <p className="post-voteScore">{post.voteScore} score</p>
-                  <p className="post-comments">{post.commentCount} comments</p>
+                  <PostScore className="text-muted">
+                    {post.voteScore} score
+                  </PostScore>
+                  <p className="post-comments text-muted">
+                    {post.commentCount} comments
+                  </p>
+                  {/* TODO: Add transition effect
+                  <CSSTransition timeout={1000} classNames="like">
+                    <FaThumbsUp key={post.voteScore} />
+                  </CSSTransition>
+                  <CSSTransition timeout={1000} classNames="like">
+                    <FaThumbsDown key={post.voteScore} />
+                  </CSSTransition> */}
+                  <div className="control-buttons">
+                    <button>
+                      <FaThumbsUp />
+                    </button>
+                    <button>
+                      <FaThumbsDown />
+                    </button>
+                  </div>
                 </Col>
               </Row>
             </CardText>
             <Link to={`/view/${post.id}`}>
-              <Button>Read Now</Button>
+              <Button color="primary">Read Now</Button>
             </Link>
           </CardBody>
         </Card>
-
-        <div className="row" />
       </div>
     );
   }

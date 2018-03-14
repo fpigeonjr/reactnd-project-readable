@@ -6,7 +6,7 @@ import { browserHistory } from "react-router";
 // import the root reducer
 import rootReducer from "./reducers/index";
 
-//import static data, TODO: replace with api
+// import static data TODO: replace with api
 import comments from "./data/comments";
 import posts from "./data/posts";
 import categories from "./data/categories";

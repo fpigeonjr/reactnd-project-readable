@@ -18,6 +18,7 @@ const router = (
       <Route path="/" component={App}>
         <IndexRoute component={PostList} />
         <Route path="/view/:postId" component={Single} />
+        <Route path="/category/:category" component={PostList} />
       </Route>
     </Router>
   </Provider>
