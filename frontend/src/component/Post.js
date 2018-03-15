@@ -62,10 +62,20 @@ class Post extends Component {
                   </div>
                 </Col>
               </Row>
+              {this.props.location.pathname !== "/" && (
+                <Row>
+                  <Col sm="8">
+                    <hr />
+                    <p className="post-body">{post.body}</p>
+                  </Col>
+                </Row>
+              )}
             </CardText>
-            <Link to={`/view/${post.id}`}>
-              <Button color="primary">Read Now</Button>
-            </Link>
+            {this.props.location.pathname === "/" && (
+              <Link to={`/view/${post.id}`}>
+                <Button color="primary">Read Now</Button>
+              </Link>
+            )}
           </CardBody>
         </Card>
       </div>

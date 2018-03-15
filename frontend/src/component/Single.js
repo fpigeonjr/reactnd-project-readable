@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Post from "./Post";
 import Comments from "./Comments";
+import { Row, Col } from "reactstrap";
+
 class Single extends Component {
   render() {
     // index of post
@@ -11,10 +13,14 @@ class Single extends Component {
     const post = this.props.posts[i];
 
     return (
-      <div className="single-post">
-        <Post i={i} post={post} {...this.props} />
-        <Comments />
-      </div>
+      <Row className="single-post">
+        <Col sm="6">
+          <Post i={i} post={post} {...this.props} />
+        </Col>
+        <Col sm="6">
+          <Comments />
+        </Col>
+      </Row>
     );
   }
 }
